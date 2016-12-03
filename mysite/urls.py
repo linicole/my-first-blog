@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls import include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # Django redirect everything that comes into 'http://127.0.0.1.8080/' to blog.urls
+    url(r'', include('blog.urls')),
 ]
